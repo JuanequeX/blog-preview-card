@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course Card</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #F0C040;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 40px;
+    }
+
+    /* ── Card container ── */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      width: 320px;
+      overflow: hidden;
+      border: 1.5px solid #1a1a1a;
+      box-shadow: 5px 7px 0px #1a1a1a;
+    }
+
+    /* ── Thumbnail / illustration area ── */
+    .card__thumbnail {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .card__thumbnail svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* ── Body ── */
+    .card__body {
+      padding: 20px;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      background-color: #F0C040;
+      color: #7a5c00;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    /* Meta date */
+    .card__meta {
+      font-size: 13px;
+      color: #888888;
+      margin-bottom: 6px;
+    }
+
+    /* Title */
+    .card__title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111111;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    /* Description */
+    .card__description {
+      font-size: 14px;
+      color: #666666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Author row */
+    .card__author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #d0c8b0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #5a4a20;
+      flex-shrink: 0;
+      /* Replace background-color + initials with an <img> when you have a real photo */
+    }
+
+    .avatar__name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111111;
+    }
+  </style>
+</head>
+<body>
+
+  <article class="card">
+
+    <!-- Thumbnail illustration (inline SVG — swap for <img> if you have a real image) -->
+    <div class="card__thumbnail">
+      <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="320" height="180" fill="#F0C040"/>
+
+        <!-- Black organic shapes bottom-left -->
+        <ellipse cx="60"  cy="200" rx="110" ry="80" fill="#1a1a1a"/>
+        <ellipse cx="0"   cy="170" rx="80"  ry="60" fill="#1a1a1a"/>
+
+        <!-- White oval -->
+        <ellipse cx="165" cy="80" rx="52" ry="62" fill="#ffffff"/>
+
+        <!-- Black "D" overlay -->
+        <path d="M165 18 Q230 18 230 80 Q230 142 165 142 L165 18Z" fill="#1a1a1a"/>
+
+        <!-- White bracket / code icon -->
+        <rect x="118" y="54" width="6"  height="24" rx="2" fill="#ffffff"/>
+        <rect x="118" y="54" width="16" height="6"  rx="2" fill="#ffffff"/>
+        <rect x="118" y="72" width="16" height="6"  rx="2" fill="#ffffff"/>
+
+        <rect x="145" y="62" width="6"  height="24" rx="2" fill="#ffffff"/>
+        <rect x="135" y="80" width="16" height="6"  rx="2" fill="#ffffff"/>
+        <rect x="135" y="62" width="16" height="6"  rx="2" fill="#ffffff"/>
+
+        <!-- Wavy lines right side -->
+        <path d="M248 60 Q258 65 248 80 Q238 95 248 110" stroke="#1a1a1a" stroke-width="2.5" fill="none"/>
+        <path d="M262 55 Q272 65 262 82 Q252 98 262 115" stroke="#1a1a1a" stroke-width="2.5" fill="none"/>
+        <path d="M276 50 Q286 62 276 82 Q266 100 276 118" stroke="#1a1a1a" stroke-width="2.5" fill="none"/>
+
+        <!-- Arrow ticks -->
+        <polyline points="248,108 244,118 248,118 244,128" stroke="#1a1a1a" stroke-width="2.5" fill="none"/>
+        <polyline points="262,113 258,123 262,123 258,133" stroke="#1a1a1a" stroke-width="2.5" fill="none"/>
+        <polyline points="276,116 272,126 276,126 272,136" stroke="#1a1a1a" stroke-width="2.5" fill="none"/>
+      </svg>
+    </div>
+
+    <!-- Body -->
+    <div class="card__body">
+      <span class="badge">Learning</span>
+      <p class="card__meta">Published 21 Dec 2023</p>
+      <h2 class="card__title">HTML &amp; CSS foundations</h2>
+      <p class="card__description">
+        These languages are the backbone of every website, defining structure, content, and presentation.
+      </p>
+      <div class="card__author">
+        <!-- Swap the initials div for <img src="..." alt="Greg Hooper"> when ready -->
+        <div class="avatar" aria-hidden="true">GH</div>
+        <span class="avatar__name">Greg Hooper</span>
+      </div>
+    </div>
+
+  </article>
+
+</body>
+</html>
